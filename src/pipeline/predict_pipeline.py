@@ -1,6 +1,7 @@
 
 import sys
 import pandas as pd
+import os
 from src.exception import CustomException
 from src.utils import load_object
 
@@ -12,7 +13,7 @@ class PredictPipeline:
     def predict(self,features):
         try:
             model_path=os.path.join("artifacts","model.pkl")
-            preprocessor_path=os.path.join('artifacts','preprocessor.pkl')
+            preprocessor_path=os.path.join('artifacts','proprocessor.pkl')
             print("Before Loading")
             model=load_object(file_path=model_path)
             preprocessor=load_object(file_path=preprocessor_path)
